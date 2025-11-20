@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atajos VSCode • RAsoftDev ⌨️</title>
+  <meta name="description" content="Cheat sheet de atajos de teclado para VSCode — lista práctica y printable." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#071023;
+      --muted:#9aa4b2;
+      --accent:#6EE7B7;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(800px 400px at 10% 10%, rgba(59,130,246,0.05), transparent 8%),
+                  radial-gradient(600px 300px at 90% 90%, rgba(110,231,183,0.04), transparent 8%),
+                  var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:28px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      background:linear-gradient(135deg,#06b6d4,#7c3aed);
+      display:grid;place-items:center;font-weight:800;font-size:20px;color:#041020;
+      box-shadow: 0 10px 30px rgba(124,58,237,0.14);
+    }
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+
+    .controls{
+      display:flex;gap:8px;align-items:center;
+    }
+    .btn{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:inherit;
+      cursor:pointer;font-weight:700;font-size:13px;
+    }
+    .btn-cta{background:linear-gradient(90deg,#06b6d4,#7c3aed);border:none;padding:8px 14px;border-radius:10px;color:#041020;font-weight:800}
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:20px;
+      align-items:start;
+    }
+
+    /* cheat sheet card */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);padding:18px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    }
+
+    .section{
+      margin-bottom:18px;
+    }
+    .section h2{
+      margin:0 0 8px 0;font-size:16px;display:flex;align-items:center;gap:8px;
+    }
+    .kb-list{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;
+    }
+    .kb{
+      background:var(--card);
+      border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.02);
+      display:flex;justify-content:space-between;gap:10px;align-items:center;
+    }
+    .kbl{
+      display:flex;flex-direction:column;gap:6px;
+    }
+    .key{
+      background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:8px;font-weight:700;font-size:13px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .muted{color:var(--muted);font-size:13px}
+    .emoji{font-size:18px;margin-right:6px}
+
+    /* right column */
+    aside .meta{display:flex;flex-direction:column;gap:8px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,#111827,#081024);border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-weight:700;font-size:12px}
+
+    footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small screens */
+    @media (max-width:980px){
+      main{grid-template-columns:1fr}
+      .controls{margin-top:10px}
+    }
+
+    /* printable tweaks */
+    @media print{
+      body{background:white;color:black}
+      .logo,.btn-cta{display:none}
+    }
+
+    /* tiny interactions */
+    .copy-small{
+      font-size:12px;padding:6px 8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--muted);cursor:pointer
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">RA</div>
+        <div>
+          <h1>Atajos VSCode • RAsoftDev</h1>
+          <p class="lead">Cheat sheet con los atajos esenciales — copia, imprime o guarda. ⌨️🔥</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn" onclick="window.print()">🖨️ Imprimir</button>
+        <button class="btn" id="copyAll">📋 Copiar todo</button>
+        <a class="btn btn-cta" href="#" onclick="downloadHTML()">⬇️ Descargar</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="cheats">
+        <h2 id="cheats">📚 Cheatsheet — Atajos Esenciales</h2>
+
+        <div class="section">
+          <h2>🔥 ATAJOS BÁSICOS</h2>
+          <div class="kb-list">
+            <div class="kb"><div class="kbl"><div><span class="emoji">🔎</span><strong>Abrir la paleta de comandos</strong></div><div class="muted">Ctrl + Shift + P</div></div></div>
+            <div class="kb"><div class="kbl"><div><span class="emoji">🔎</span><strong>Abrir búsqueda global</strong></div><div class="muted">Ctrl + Shift + F</div></div></div>
+            <div class="kb"><div class="kbl"><div><span class="emoji">🔎</span><strong>Buscar en archivo</strong></div><div class="muted">Ctrl + F</div></div></div>
+            <div class="kb"><div class="kbl"><div><span class="emoji">✍️</span><strong>Abrir archivo rápido</strong></div><div class="muted">Ctrl + P</div></div></div>
+            <div class="kb"><div class="kbl"><div><span class="emoji">⚙️</span><strong>Abrir Ajustes</strong></div><div class="muted">Ctrl + ,</div></div></div>
+            <div class="kb"><div class="kbl"><div><span class="emoji">🗂️</span><strong>Nueva ventana</strong></div><div class="muted">Ctrl + Shift + N</div></div></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>✍️ EDICIÓN DE CÓDIGO</h2>
+          <div class="kb-list">
+            <div class="kb"><div class="kbl"><div><strong>Copiar línea</strong></div><div class="muted">Ctrl + C (sin selección)</div></div><div class="key">Ctrl + C</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Cortar línea</strong></div><div class="muted">Ctrl + X (sin selección)</div></div><div class="key">Ctrl + X</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Duplicar línea</strong></div><div class="muted">Shift + Alt + ↓ / ↑</div></div><div class="key">Shift + Alt + ↓</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Mover línea</strong></div><div class="muted">Alt + ↑ / ↓</div></div><div class="key">Alt + ↑</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Comentar línea</strong></div><div class="muted">Ctrl + /</div></div><div class="key">Ctrl + /</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Comentar bloque</strong></div><div class="muted">Shift + Alt + A</div></div><div class="key">Shift + Alt + A</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Selección múltiple</strong></div><div class="muted">Ctrl + Alt + ↓ / ↑</div></div><div class="key">Ctrl + Alt + ↓</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Formatear archivo</strong></div><div class="muted">Shift + Alt + F</div></div><div class="key">Shift + Alt + F</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Ir a definición</strong></div><div class="muted">F12</div></div><div class="key">F12</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Peek Definition</strong></div><div class="muted">Alt + F12</div></div><div class="key">Alt + F12</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Renombrar símbolo</strong></div><div class="muted">F2</div></div><div class="key">F2</div></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>📂 ARCHIVOS & NAVEGACIÓN</h2>
+          <div class="kb-list">
+            <div class="kb"><div class="kbl"><div><strong>Nuevo archivo</strong></div><div class="muted">Ctrl + N</div></div><div class="key">Ctrl + N</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Guardar</strong></div><div class="muted">Ctrl + S</div></div><div class="key">Ctrl + S</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Cerrar editor activo</strong></div><div class="muted">Ctrl + W</div></div><div class="key">Ctrl + W</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Ir a línea</strong></div><div class="muted">Ctrl + G</div></div><div class="key">Ctrl + G</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Regresar / Avanzar</strong></div><div class="muted">Alt + ← / Alt + →</div></div><div class="key">Alt + ←</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Ir a símbolo en archivo</strong></div><div class="muted">Ctrl + Shift + O</div></div><div class="key">Ctrl + Shift + O</div></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>🖥️ TERMINAL & PANEL</h2>
+          <div class="kb-list">
+            <div class="kb"><div class="kbl"><div><strong>Abrir terminal integrado</strong></div><div class="muted">Ctrl + ` (backtick)</div></div><div class="key">Ctrl + `</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Nueva terminal</strong></div><div class="muted">Ctrl + Shift + `</div></div><div class="key">Ctrl + Shift + `</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Toggle panel</strong></div><div class="muted">Ctrl + J</div></div><div class="key">Ctrl + J</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Dividir editor</strong></div><div class="muted">Ctrl + \</div></div><div class="key">Ctrl + \</div></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>🐞 DEBUG</h2>
+          <div class="kb-list">
+            <div class="kb"><div class="kbl"><div><strong>Iniciar Debug</strong></div><div class="muted">F5</div></div><div class="key">F5</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Detener</strong></div><div class="muted">Shift + F5</div></div><div class="key">Shift + F5</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Paso sobre</strong></div><div class="muted">F10</div></div><div class="key">F10</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Paso dentro</strong></div><div class="muted">F11</div></div><div class="key">F11</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Toggle breakpoint</strong></div><div class="muted">F9</div></div><div class="key">F9</div></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>🔧 GIT</h2>
+          <div class="kb-list">
+            <div class="kb"><div class="kbl"><div><strong>Abrir vista Git</strong></div><div class="muted">Ctrl + Shift + G</div></div><div class="key">Ctrl + Shift + G</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Commit (en input)</strong></div><div class="muted">Ctrl + Enter</div></div><div class="key">Ctrl + Enter</div></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>✳️ MULTI-CURSOR / PROS</h2>
+          <div class="kb-list">
+            <div class="kb"><div class="kbl"><div><strong>Multi-cursor</strong></div><div class="muted">Ctrl + Alt + ↑ / ↓</div></div><div class="key">Ctrl + Alt + ↓</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Seleccionar siguiente</strong></div><div class="muted">Ctrl + D</div></div><div class="key">Ctrl + D</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Seleccionar todas las apariciones</strong></div><div class="muted">Ctrl + Shift + L</div></div><div class="key">Ctrl + Shift + L</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Reabrir archivo cerrado</strong></div><div class="muted">Ctrl + Shift + T</div></div><div class="key">Ctrl + Shift + T</div></div>
+            <div class="kb"><div class="kbl"><div><strong>Zen Mode</strong></div><div class="muted">Ctrl + K, Z</div></div><div class="key">Ctrl + K Z</div></div>
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="card" aria-labelledby="meta">
+        <h2 id="meta">📎 Info & Recursos</h2>
+        <div class="meta">
+          <div><span class="tag">Printable</span></div>
+          <div class="muted">Imprime esta página o descárgala para tenerla siempre a mano.</div>
+          <div style="margin-top:8px"><strong>Consejo:</strong> si vienes de JetBrains, estos atajos te van a acelerar el trabajo diario.</div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+
+        <div style="display:flex;gap:8px;flex-direction:column">
+          <button class="copy-small" onclick="copySection('ATAJOS BÁSICOS','section0')">📋 Copiar sección: Básicos</button>
+          <button class="copy-small" onclick="copySection('EDICIÓN','section1')">📋 Copiar sección: Edición</button>
+          <button class="copy-small" onclick="copySection('PROS','sectionLast')">📋 Copiar sección: Pros</button>
+        </div>
+
+        <div style="margin-top:14px;color:var(--muted);font-size:13px">Made with ❤️ by <strong>rasoftdev</strong></div>
+      </aside>
+    </main>
+
+    <footer>
+      © 2025 RAsoftDev — Atajos VSCode • Úsalo con cariño y café ☕
+    </footer>
+  </div>
+
+  <script>
+    // Build a plain-text version for copy/download
+    function buildPlain(){
+      const lines = [];
+      const groups = document.querySelectorAll('.card > .section');
+      document.querySelectorAll('.card > .section').forEach((s, idx) => {
+        const title = s.querySelector('h2').innerText.trim();
+        lines.push('== '+title+' ==\\n');
+        s.querySelectorAll('.kb').forEach(k=>{
+          const label = k.querySelector('.kbl > div:first-child').innerText.trim();
+          const key = k.querySelector('.muted').innerText.trim();
+          lines.push(label + ' — ' + key);
+        });
+        lines.push('\\n');
+      });
+      return lines.join('\\n');
+    }
+
+    document.getElementById('copyAll').addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(buildPlain());
+        alert('Todo copiado al portapapeles ✅');
+      }catch(e){
+        alert('No se pudo copiar automáticamente. Selecciona y copia manualmente.');
+      }
+    });
+
+    function copySection(name, sel){
+      // find matching by header text
+      let found = null;
+      document.querySelectorAll('.card > .section').forEach(s=>{
+        if(s.querySelector('h2') && s.querySelector('h2').innerText.startsWith(name.split(' ')[0])){
+          found = s;
+        }
+      });
+      if(!found) found = document.querySelectorAll('.card > .section')[0];
+      const lines = [];
+      lines.push('== ' + found.querySelector('h2').innerText + ' ==\\n');
+      found.querySelectorAll('.kb').forEach(k=>{
+        const label = k.querySelector('.kbl > div:first-child').innerText.trim();
+        const key = k.querySelector('.muted').innerText.trim();
+        lines.push(label + ' — ' + key);
+      });
+      navigator.clipboard.writeText(lines.join('\\n')).then(()=>alert('Sección copiada ✅'), ()=>alert('No se pudo copiar'));
+    }
+
+    function downloadHTML(){
+      const html = '<!doctype html>' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'vscode-atajos.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),500);
+    }
+  </script>
+</body>
+</html>
