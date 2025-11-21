@@ -123,6 +123,18 @@
     .copy-small{
       font-size:12px;padding:6px 8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--muted);cursor:pointer
     }
+
+    /* extensions grid */
+    .ext-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:10px}
+    .ext-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.02);
+      display:flex;flex-direction:column;gap:8px;
+    }
+    .ext-name{font-weight:800}
+    .ext-id{font-size:12px;color:var(--muted);font-family:monospace}
+    .install-line{font-size:13px;padding:6px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);font-family:monospace}
+    .ext-desc{font-size:13px;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -228,6 +240,173 @@
           </div>
         </div>
 
+        <!-- EXTENSIONS SECTION (ADDED FULL LIST) -->
+        <div class="section" id="extensiones">
+          <h2>🔌 Extensiones recomendadas</h2>
+          <p class="muted">Instalación rápida: <code>code --install-extension &lt;publisher.extension&gt;</code></p>
+          <div class="ext-grid">
+            <!-- Generated extension cards -->
+            <div class="ext-card"><div class="ext-name">Better Comments</div><div class="ext-id">aaron-bond.better-comments</div><div class="ext-desc">Mejora la visual de comentarios (TODO, FIXME, etc.).</div><div class="install-line">code --install-extension aaron-bond.better-comments</div></div>
+
+            <div class="ext-card"><div class="ext-name">SCSS Lint</div><div class="ext-id">adamwalzer.scss-lint</div><div class="ext-desc">Lint para archivos SCSS.</div><div class="install-line">code --install-extension adamwalzer.scss-lint</div></div>
+
+            <div class="ext-card"><div class="ext-name">CodeSnap</div><div class="ext-id">adpyke.codesnap</div><div class="ext-desc">Tomar capturas bonitas de fragmentos de código.</div><div class="install-line">code --install-extension adpyke.codesnap</div></div>
+
+            <div class="ext-card"><div class="ext-name">Bookmarks</div><div class="ext-id">alefragnani.bookmarks</div><div class="ext-desc">Marcar líneas y navegar rápido.</div><div class="install-line">code --install-extension alefragnani.bookmarks</div></div>
+
+            <div class="ext-card"><div class="ext-name">Intelephense</div><div class="ext-id">bmewburn.vscode-intelephense-client</div><div class="ext-desc">Language server PHP: autocompletado y análisis.</div><div class="install-line">code --install-extension bmewburn.vscode-intelephense-client</div></div>
+
+            <div class="ext-card"><div class="ext-name">Simple React Snippets</div><div class="ext-id">burkeholland.simple-react-snippets</div><div class="ext-desc">Snippets para React rápidos.</div><div class="install-line">code --install-extension burkeholland.simple-react-snippets</div></div>
+
+            <div class="ext-card"><div class="ext-name">npm Intellisense</div><div class="ext-id">christian-kohler.npm-intellisense</div><div class="ext-desc">Autocompleta módulos npm en imports.</div><div class="install-line">code --install-extension christian-kohler.npm-intellisense</div></div>
+
+            <div class="ext-card"><div class="ext-name">Path Intellisense</div><div class="ext-id">christian-kohler.path-intellisense</div><div class="ext-desc">Autocompleta rutas de archivos.</div><div class="install-line">code --install-extension christian-kohler.path-intellisense</div></div>
+
+            <div class="ext-card"><div class="ext-name">Your Pomodoro</div><div class="ext-id">criztiandev.your-pomodoro</div><div class="ext-desc">Temporizador Pomodoro integrado.</div><div class="install-line">code --install-extension criztiandev.your-pomodoro</div></div>
+
+            <div class="ext-card"><div class="ext-name">ESLint</div><div class="ext-id">dbaeumer.vscode-eslint</div><div class="ext-desc">Linter para JavaScript/TypeScript.</div><div class="install-line">code --install-extension dbaeumer.vscode-eslint</div></div>
+
+            <div class="ext-card"><div class="ext-name">Composer (PHP)</div><div class="ext-id">devsense.composer-php-vscode</div><div class="ext-desc">Integración Composer en VSCode.</div><div class="install-line">code --install-extension devsense.composer-php-vscode</div></div>
+
+            <div class="ext-card"><div class="ext-name">Git History</div><div class="ext-id">donjayamanne.githistory</div><div class="ext-desc">Visualiza el historial de commits.</div><div class="install-line">code --install-extension donjayamanne.githistory</div></div>
+
+            <div class="ext-card"><div class="ext-name">Dracula Theme</div><div class="ext-id">dracula-theme.theme-dracula</div><div class="ext-desc">Tema oscuro popular.</div><div class="install-line">code --install-extension dracula-theme.theme-dracula</div></div>
+
+            <div class="ext-card"><div class="ext-name">GitLens (eamodio)</div><div class="ext-id">eamodio.gitlens</div><div class="ext-desc">Herramientas avanzadas para Git.</div><div class="install-line">code --install-extension eamodio.gitlens</div></div>
+
+            <div class="ext-card"><div class="ext-name">HTML CSS Support</div><div class="ext-id">ecmel.vscode-html-css</div><div class="ext-desc">Soporte para CSS en HTML.</div><div class="install-line">code --install-extension ecmel.vscode-html-css</div></div>
+
+            <div class="ext-card"><div class="ext-name">Prettier</div><div class="ext-id">esbenp.prettier-vscode</div><div class="ext-desc">Formateador de código.</div><div class="install-line">code --install-extension esbenp.prettier-vscode</div></div>
+
+            <div class="ext-card"><div class="ext-name">Auto Close Tag</div><div class="ext-id">formulahendry.auto-close-tag</div><div class="ext-desc">Cierra etiquetas HTML/JSX automáticamente.</div><div class="install-line">code --install-extension formulahendry.auto-close-tag</div></div>
+
+            <div class="ext-card"><div class="ext-name">Auto Rename Tag</div><div class="ext-id">formulahendry.auto-rename-tag</div><div class="ext-desc">Renombra etiquetas emparejadas.</div><div class="install-line">code --install-extension formulahendry.auto-rename-tag</div></div>
+
+            <div class="ext-card"><div class="ext-name">Code Runner</div><div class="ext-id">formulahendry.code-runner</div><div class="ext-desc">Ejecuta fragmentos de código rápido.</div><div class="install-line">code --install-extension formulahendry.code-runner</div></div>
+
+            <div class="ext-card"><div class="ext-name">Docker Explorer</div><div class="ext-id">formulahendry.docker-explorer</div><div class="ext-desc">Explora contenedores desde VSCode.</div><div class="install-line">code --install-extension formulahendry.docker-explorer</div></div>
+
+            <div class="ext-card"><div class="ext-name">GitHub Copilot</div><div class="ext-id">github.copilot</div><div class="ext-desc">Autocompletado asistido por IA.</div><div class="install-line">code --install-extension github.copilot</div></div>
+
+            <div class="ext-card"><div class="ext-name">Copilot Chat</div><div class="ext-id">github.copilot-chat</div><div class="ext-desc">Interfaz de chat para Copilot.</div><div class="install-line">code --install-extension github.copilot-chat</div></div>
+
+            <div class="ext-card"><div class="ext-name">GitHub Pull Requests</div><div class="ext-id">github.vscode-pull-request-github</div><div class="ext-desc">Gestiona PRs desde VSCode.</div><div class="install-line">code --install-extension github.vscode-pull-request-github</div></div>
+
+            <div class="ext-card"><div class="ext-name">Live Sass</div><div class="ext-id">glenn2223.live-sass</div><div class="ext-desc">Compila SASS en vivo.</div><div class="install-line">code --install-extension glenn2223.live-sass</div></div>
+
+            <div class="ext-card"><div class="ext-name">TODO Tree</div><div class="ext-id">gruntfuggly.todo-tree</div><div class="ext-desc">Encuentra TODOs y FIXME en el proyecto.</div><div class="install-line">code --install-extension gruntfuggly.todo-tree</div></div>
+
+            <div class="ext-card"><div class="ext-name">REST Client</div><div class="ext-id">humao.rest-client</div><div class="ext-desc">Cliente HTTP dentro de VSCode.</div><div class="install-line">code --install-extension humao.rest-client</div></div>
+
+            <div class="ext-card"><div class="ext-name">SVG Viewer</div><div class="ext-id">jock.svg</div><div class="ext-desc">Previsualiza archivos SVG.</div><div class="install-line">code --install-extension jock.svg</div></div>
+
+            <div class="ext-card"><div class="ext-name">Peacock</div><div class="ext-id">johnpapa.vscode-peacock</div><div class="ext-desc">Colorea tus workspaces.</div><div class="install-line">code --install-extension johnpapa.vscode-peacock</div></div>
+
+            <div class="ext-card"><div class="ext-name">PHP CS Fixer</div><div class="ext-id">junstyle.php-cs-fixer</div><div class="ext-desc">Formateo y correcciones para PHP.</div><div class="install-line">code --install-extension junstyle.php-cs-fixer</div></div>
+
+            <div class="ext-card"><div class="ext-name">Gutter Preview</div><div class="ext-id">kisstkondoros.vscode-gutter-preview</div><div class="ext-desc">Previsualiza imágenes en gutter.</div><div class="install-line">code --install-extension kisstkondoros.vscode-gutter-preview</div></div>
+
+            <div class="ext-card"><div class="ext-name">String Manipulation</div><div class="ext-id">marclipovsky.string-manipulation</div><div class="ext-desc">Comandos rápidos para transformar strings.</div><div class="install-line">code --install-extension marclipovsky.string-manipulation</div></div>
+
+            <div class="ext-card"><div class="ext-name">Mac Dark Theme</div><div class="ext-id">maulikcodes.macdark</div><div class="ext-desc">Tema oscuro estilo mac.</div><div class="install-line">code --install-extension maulikcodes.macdark</div></div>
+
+            <div class="ext-card"><div class="ext-name">Git Graph</div><div class="ext-id">mhutchie.git-graph</div><div class="ext-desc">Visualización gráfica del repo Git.</div><div class="install-line">code --install-extension mhutchie.git-graph</div></div>
+
+            <div class="ext-card"><div class="ext-name">VSCode Containers</div><div class="ext-id">ms-azuretools.vscode-containers</div><div class="ext-desc">Herramientas para contenedores.</div><div class="install-line">code --install-extension ms-azuretools.vscode-containers</div></div>
+
+            <div class="ext-card"><div class="ext-name">Docker</div><div class="ext-id">ms-azuretools.vscode-docker</div><div class="ext-desc">Soporte Docker (images, containers, compose).</div><div class="install-line">code --install-extension ms-azuretools.vscode-docker</div></div>
+
+            <div class="ext-card"><div class="ext-name">debugpy</div><div class="ext-id">ms-python.debugpy</div><div class="ext-desc">Depurador Python.</div><div class="install-line">code --install-extension ms-python.debugpy</div></div>
+
+            <div class="ext-card"><div class="ext-name">Python</div><div class="ext-id">ms-python.python</div><div class="ext-desc">Soporte Python completo (LSP, debugging, etc.).</div><div class="install-line">code --install-extension ms-python.python</div></div>
+
+            <div class="ext-card"><div class="ext-name">Pylance</div><div class="ext-id">ms-python.vscode-pylance</div><div class="ext-desc">Language server rápido para Python.</div><div class="install-line">code --install-extension ms-python.vscode-pylance</div></div>
+
+            <div class="ext-card"><div class="ext-name">Python Envs</div><div class="ext-id">ms-python.vscode-python-envs</div><div class="ext-desc">Gestión de entornos Python.</div><div class="install-line">code --install-extension ms-python.vscode-python-envs</div></div>
+
+            <div class="ext-card"><div class="ext-name">Jupyter (core)</div><div class="ext-id">ms-toolsai.jupyter</div><div class="ext-desc">Soporte Jupyter notebooks.</div><div class="install-line">code --install-extension ms-toolsai.jupyter</div></div>
+
+            <div class="ext-card"><div class="ext-name">Jupyter Keymap</div><div class="ext-id">ms-toolsai.jupyter-keymap</div><div class="ext-desc">Keybindings para Jupyter.</div><div class="install-line">code --install-extension ms-toolsai.jupyter-keymap</div></div>
+
+            <div class="ext-card"><div class="ext-name">Jupyter Renderers</div><div class="ext-id">ms-toolsai.jupyter-renderers</div><div class="ext-desc">Renderers para Jupyter outputs.</div><div class="install-line">code --install-extension ms-toolsai.jupyter-renderers</div></div>
+
+            <div class="ext-card"><div class="ext-name">Jupyter Cell Tags</div><div class="ext-id">ms-toolsai.vscode-jupyter-cell-tags</div><div class="ext-desc">Etiquetas por celdas en Jupyter.</div><div class="install-line">code --install-extension ms-toolsai.vscode-jupyter-cell-tags</div></div>
+
+            <div class="ext-card"><div class="ext-name">Jupyter Slideshow</div><div class="ext-id">ms-toolsai.vscode-jupyter-slideshow</div><div class="ext-desc">Presentaciones desde notebooks.</div><div class="install-line">code --install-extension ms-toolsai.vscode-jupyter-slideshow</div></div>
+
+            <div class="ext-card"><div class="ext-name">Remote - SSH</div><div class="ext-id">ms-vscode-remote.remote-ssh</div><div class="ext-desc">Conexión SSH remota integrada.</div><div class="install-line">code --install-extension ms-vscode-remote.remote-ssh</div></div>
+
+            <div class="ext-card"><div class="ext-name">Remote - SSH Edit</div><div class="ext-id">ms-vscode-remote.remote-ssh-edit</div><div class="ext-desc">Soporte para edición remota por SSH.</div><div class="install-line">code --install-extension ms-vscode-remote.remote-ssh-edit</div></div>
+
+            <div class="ext-card"><div class="ext-name">Remote Explorer</div><div class="ext-id">ms-vscode.remote-explorer</div><div class="ext-desc">Explorador de recursos remotos.</div><div class="install-line">code --install-extension ms-vscode.remote-explorer</div></div>
+
+            <div class="ext-card"><div class="ext-name">TypeScript Next</div><div class="ext-id">ms-vscode.vscode-typescript-next</div><div class="ext-desc">Versión experimental TypeScript para VSCode.</div><div class="install-line">code --install-extension ms-vscode.vscode-typescript-next</div></div>
+
+            <div class="ext-card"><div class="ext-name">Live Share</div><div class="ext-id">ms-vsliveshare.vsliveshare</div><div class="ext-desc">Pair programming en tiempo real.</div><div class="install-line">code --install-extension ms-vsliveshare.vsliveshare</div></div>
+
+            <div class="ext-card"><div class="ext-name">Twig Snippets</div><div class="ext-id">nadim-vscode.twig-code-snippets</div><div class="ext-desc">Snippets para Twig.</div><div class="install-line">code --install-extension nadim-vscode.twig-code-snippets</div></div>
+
+            <div class="ext-card"><div class="ext-name">SFTP</div><div class="ext-id">natizyskunk.sftp</div><div class="ext-desc">Editar/transferir archivos vía SFTP.</div><div class="install-line">code --install-extension natizyskunk.sftp</div></div>
+
+            <div class="ext-card"><div class="ext-name">Color Highlight</div><div class="ext-id">naumovs.color-highlight</div><div class="ext-desc">Resalta colores en CSS/HTML inline.</div><div class="install-line">code --install-extension naumovs.color-highlight</div></div>
+
+            <div class="ext-card"><div class="ext-name">Oceanic Next Theme</div><div class="ext-id">naumovs.theme-oceanicnext</div><div class="ext-desc">Tema Oceanic Next.</div><div class="install-line">code --install-extension naumovs.theme-oceanicnext</div></div>
+
+            <div class="ext-card"><div class="ext-name">PHP Docblocker</div><div class="ext-id">neilbrayfield.php-docblocker</div><div class="ext-desc">Genera docblocks para PHP.</div><div class="install-line">code --install-extension neilbrayfield.php-docblocker</div></div>
+
+            <div class="ext-card"><div class="ext-name">Indent Rainbow</div><div class="ext-id">oderwat.indent-rainbow</div><div class="ext-desc">Colorea indentación para mejorar lectura.</div><div class="install-line">code --install-extension oderwat.indent-rainbow</div></div>
+
+            <div class="ext-card"><div class="ext-name">Docker Compose</div><div class="ext-id">p1c2u.docker-compose</div><div class="ext-desc">Soporte para archivos docker-compose.</div><div class="install-line">code --install-extension p1c2u.docker-compose</div></div>
+
+            <div class="ext-card"><div class="ext-name">Material Icon Theme (pkief)</div><div class="ext-id">pkief.material-icon-theme</div><div class="ext-desc">Iconos estilo Material.</div><div class="install-line">code --install-extension pkief.material-icon-theme</div></div>
+
+            <div class="ext-card"><div class="ext-name">Polacode</div><div class="ext-id">pnp.polacode</div><div class="ext-desc">Capturas estilo Polaroid de código.</div><div class="install-line">code --install-extension pnp.polacode</div></div>
+
+            <div class="ext-card"><div class="ext-name">Laravel Intelephense</div><div class="ext-id">porifa.laravel-intelephense</div><div class="ext-desc">Soporte PHP/Laravel (intelephense extendido).</div><div class="install-line">code --install-extension porifa.laravel-intelephense</div></div>
+
+            <div class="ext-card"><div class="ext-name">CSS Peek</div><div class="ext-id">pranaygp.vscode-css-peek</div><div class="ext-desc">Ir a definition de clases CSS desde HTML.</div><div class="install-line">code --install-extension pranaygp.vscode-css-peek</div></div>
+
+            <div class="ext-card"><div class="ext-name">Thunder Client</div><div class="ext-id">rangav.vscode-thunder-client</div><div class="ext-desc">Cliente REST ligero (alternativa a Postman).</div><div class="install-line">code --install-extension rangav.vscode-thunder-client</div></div>
+
+            <div class="ext-card"><div class="ext-name">Live Server</div><div class="ext-id">ritwickdey.liveserver</div><div class="ext-desc">Servidor local con live reload.</div><div class="install-line">code --install-extension ritwickdey.liveserver</div></div>
+
+            <div class="ext-card"><div class="ext-name">Night Owl</div><div class="ext-id">sdras.night-owl</div><div class="ext-desc">Tema Night Owl.</div><div class="install-line">code --install-extension sdras.night-owl</div></div>
+
+            <div class="ext-card"><div class="ext-name">Code Spell Checker</div><div class="ext-id">streetsidesoftware.code-spell-checker</div><div class="ext-desc">Corrector ortográfico para código.</div><div class="install-line">code --install-extension streetsidesoftware.code-spell-checker</div></div>
+
+            <div class="ext-card"><div class="ext-name">Spell Checker (Spanish)</div><div class="ext-id">streetsidesoftware.code-spell-checker-spanish</div><div class="ext-desc">Diccionario español para spell checker.</div><div class="install-line">code --install-extension streetsidesoftware.code-spell-checker-spanish</div></div>
+
+            <div class="ext-card"><div class="ext-name">Rainbow Bracket</div><div class="ext-id">tal7aouy.rainbow-bracket</div><div class="ext-desc">Colorea paréntesis y brackets.</div><div class="install-line">code --install-extension tal7aouy.rainbow-bracket</div></div>
+
+            <div class="ext-card"><div class="ext-name">Error Lens</div><div class="ext-id">usernamehw.errorlens</div><div class="ext-desc">Resalta errores inline (usernamehw fork).</div><div class="install-line">code --install-extension usernamehw.errorlens</div></div>
+
+            <div class="ext-card"><div class="ext-name">PHPSAB</div><div class="ext-id">valeryanm.vscode-phpsab</div><div class="ext-desc">Soporte para PHPSAB (estándares PHP).</div><div class="install-line">code --install-extension valeryanm.vscode-phpsab</div></div>
+
+            <div class="ext-card"><div class="ext-name">VSCode Icons</div><div class="ext-id">vscode-icons-team.vscode-icons</div><div class="ext-desc">Set de iconos para archivos/proyectos.</div><div class="install-line">code --install-extension vscode-icons-team.vscode-icons</div></div>
+
+            <div class="ext-card"><div class="ext-name">Volar (Vue)</div><div class="ext-id">vue.volar</div><div class="ext-desc">Soporte oficial para Vue 3 (Volar).</div><div class="install-line">code --install-extension vue.volar</div></div>
+
+            <div class="ext-card"><div class="ext-name">Quokka.js</div><div class="ext-id">wallabyjs.quokka-vscode</div><div class="ext-desc">Ejecuta JS/TS en vivo (scratchpad).</div><div class="install-line">code --install-extension wallabyjs.quokka-vscode</div></div>
+
+            <div class="ext-card"><div class="ext-name">Twig Support</div><div class="ext-id">whatwedo.twig</div><div class="ext-desc">Soporte Twig (sintaxis/snippets).</div><div class="install-line">code --install-extension whatwedo.twig</div></div>
+
+            <div class="ext-card"><div class="ext-name">PHP Sniffer</div><div class="ext-id">wongjn.php-sniffer</div><div class="ext-desc">Integración PHP_CodeSniffer.</div><div class="install-line">code --install-extension wongjn.php-sniffer</div></div>
+
+            <div class="ext-card"><div class="ext-name">JavaScript Snippets</div><div class="ext-id">xabikos.javascriptsnippets</div><div class="ext-desc">Snippets para JavaScript comunes.</div><div class="install-line">code --install-extension xabikos.javascriptsnippets</div></div>
+
+            <div class="ext-card"><div class="ext-name">Xdebug (PHP)</div><div class="ext-id">xdebug.php-debug</div><div class="ext-desc">Depuración PHP con Xdebug.</div><div class="install-line">code --install-extension xdebug.php-debug</div></div>
+
+            <div class="ext-card"><div class="ext-name">GHA Switcher</div><div class="ext-id">xtawfik.gha-switcher</div><div class="ext-desc">Cambiar entre workflows/actions (helper).</div><div class="install-line">code --install-extension xtawfik.gha-switcher</div></div>
+
+            <div class="ext-card"><div class="ext-name">HTML CSS Class Completion</div><div class="ext-id">zignd.html-css-class-completion</div><div class="ext-desc">Autocompleta clases CSS desde archivos.</div><div class="install-line">code --install-extension zignd.html-css-class-completion</div></div>
+
+            <div class="ext-card"><div class="ext-name">PHP Intellisense (zobo)</div><div class="ext-id">zobo.php-intellisense</div><div class="ext-desc">Complemento de intellisense para PHP.</div><div class="install-line">code --install-extension zobo.php-intellisense</div></div>
+
+            <!-- end generated -->
+          </div>
+        </div>
+        <!-- END ext section -->
+
       </section>
 
       <aside class="card" aria-labelledby="meta">
@@ -262,15 +441,15 @@
       const groups = document.querySelectorAll('.card > .section');
       document.querySelectorAll('.card > .section').forEach((s, idx) => {
         const title = s.querySelector('h2').innerText.trim();
-        lines.push('== '+title+' ==\\n');
+        lines.push('== '+title+' ==\n');
         s.querySelectorAll('.kb').forEach(k=>{
           const label = k.querySelector('.kbl > div:first-child').innerText.trim();
           const key = k.querySelector('.muted').innerText.trim();
           lines.push(label + ' — ' + key);
         });
-        lines.push('\\n');
+        lines.push('\n');
       });
-      return lines.join('\\n');
+      return lines.join('\n');
     }
 
     document.getElementById('copyAll').addEventListener('click', async ()=>{
@@ -292,13 +471,13 @@
       });
       if(!found) found = document.querySelectorAll('.card > .section')[0];
       const lines = [];
-      lines.push('== ' + found.querySelector('h2').innerText + ' ==\\n');
+      lines.push('== ' + found.querySelector('h2').innerText + ' ==\n');
       found.querySelectorAll('.kb').forEach(k=>{
         const label = k.querySelector('.kbl > div:first-child').innerText.trim();
         const key = k.querySelector('.muted').innerText.trim();
         lines.push(label + ' — ' + key);
       });
-      navigator.clipboard.writeText(lines.join('\\n')).then(()=>alert('Sección copiada ✅'), ()=>alert('No se pudo copiar'));
+      navigator.clipboard.writeText(lines.join('\n')).then(()=>alert('Sección copiada ✅'), ()=>alert('No se pudo copiar'));
     }
 
     function downloadHTML(){
